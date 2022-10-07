@@ -1,104 +1,90 @@
-<script setup>
-</script>
-
 <template>
-  <div class="flex justify-center">
-    <div class="rounded-lg shadow-lg bg-white max-w-sm">
-      <a href="#!">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-          alt=""
-        />
-      </a>
-      <div class="p-6">
-        <h5 class="text-gray-900 text-xl font-medium mb-2">거꾸로부동산</h5>
-        <p class="text-gray-700 text-base mb-4">
-          매물 찾느라 인생을 허비하지마세요. 원하는 매물의 조건만 남기면 매물을
-          추천해드릴게요. 선택만 하세요.
-        </p>
-        <div class="flex justify-between">
+  <div class="container mx-auto max-w-sm">
+    <router-view></router-view>
+    <div class="mt-2 block text-center">
+      <Modal id="opinionModal">
+        <template v-slot:btn>
           <button
             type="button"
-            class="
-              inline-block
-              px-6
-              py-2.5
-              bg-blue-600
-              text-white
-              font-medium
-              text-xs
-              leading-tight
-              uppercase
-              rounded
-              shadow-md
-              hover:bg-blue-700 hover:shadow-lg
-              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-              active:bg-blue-800 active:shadow-lg
-              transition
-              duration-150
-              ease-in-out
-            "
+            class="inline-block rounded bg-slate-500 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-slate-600 hover:shadow-lg focus:bg-slate-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-700 active:shadow-lg"
+            data-bs-toggle="modal"
+            data-bs-target="#opinionModal"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 m-auto"
+              fill="currentColor"
+              class="m-auto h-6 w-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"
+                fill-rule="evenodd"
+                d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97z"
+                clip-rule="evenodd"
               />
             </svg>
-            좋아요</button
-          ><button
-            type="button"
-            class="
-              inline-block
-              px-6
-              py-2.5
-              bg-red-600
-              text-white
-              font-medium
-              text-xs
-              leading-tight
-              uppercase
-              rounded
-              shadow-md
-              hover:bg-red-700 hover:shadow-lg
-              focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0
-              active:bg-red-800 active:shadow-lg
-              transition
-              duration-150
-              ease-in-out
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 m-auto"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384"
-              />
-            </svg>
-
-            별로요
+            의견남기기(이벤트)
           </button>
-        </div>
-      </div>
+        </template>
+        <template #title>소중한의견</template>
+        <template #body>
+          <div class="form-group mb-6">
+            <input
+              type="email"
+              class="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              id="exampleInput8"
+              placeholder="이메일"
+            />
+          </div>
+          <div class="form-group mb-6">
+            <textarea
+              class="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              id="exampleFormControlTextarea13"
+              rows="3"
+              placeholder="귀중한 의견을 남겨주신 고객님께는 추첨을 통하여 치킨 기프티콘을 드립니다."
+            ></textarea>
+          </div>
+          <div class="form-group form-check mb-6 text-center">
+            <input
+              type="checkbox"
+              class="form-check-input mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-blue-600 checked:bg-blue-600 focus:outline-none"
+              id="exampleCheck87"
+              checked
+            />
+            <label
+              class="form-check-label inline-block text-gray-800"
+              for="exampleCheck87"
+              >나에게도 이 내용을 보내기</label
+            >
+          </div>
+          <div class="form-group mb-6">
+            <input
+              type="text"
+              class="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              id="exampleInput7"
+              placeholder="연락처"
+            />
+          </div>
+        </template>
+        <template v-slot:footer>
+          <button
+            type="button"
+            class="ml-1 inline-block rounded bg-blue-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
+          >
+            소중한 의견제출
+          </button>
+        </template>
+      </Modal>
     </div>
   </div>
 </template>
 
-<style scoped>
-</style>
+<script>
+import ContactForm from "@/components/ContactForm.vue";
+import Modal from "@/components/Modal.vue";
+export default {
+  name: "app",
+  components: { ContactForm, Modal },
+};
+</script>
+
+<style scoped></style>
