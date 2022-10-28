@@ -12,7 +12,7 @@
           </h5>
         </div>
         <a href="#!">
-          <img class="rounded-t-lg" :src="landing.img" alt="그림" />
+          <img class="rounded-t-lg" :src="landing.image" alt="그림" />
         </a>
         <button
           type="button"
@@ -114,28 +114,12 @@ export default {
   components: { Modal },
   data() {
     return {
-      landings: [
-        {
-          id: 1,
-          title: "거꾸로 부동산",
-          img: "https://st.depositphotos.com/1194063/2151/i/450/depositphotos_21515189-stock-photo-agent-with-house-model-and.jpg",
-          detail:
-            "매물 찾느라 힘드세요? 매물 조건만 남기면 실시간으로\
-          찾아서 알려드려요. 선택만 하세요.",
-          likes: 50,
-          dislikes: 5,
-        },
-        {
-          id: 2,
-          title: "비대면 부동산 방문",
-          img: "https://www.onlinemarketplaces.com/wp-content/uploads/2021/07/Contactless-World-1.jpg",
-          detail:
-            "허위 매물로 고생하신 경험 있으세요? 첫 방문은 비대면으로! 허위매물 완벽차단!",
-          likes: 20,
-          dislikes: 5,
-        },
-      ],
+      landings: [],
     };
+  },
+  async created() {
+    const response = await this.axios.get("/api/landings");
+    this.landings = response.data;
   },
 };
 </script>
